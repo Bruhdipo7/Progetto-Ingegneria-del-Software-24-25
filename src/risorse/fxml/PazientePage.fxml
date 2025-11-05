@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PazienteController">
+
+    <!-- Top: Titolo centrato -->
+    <top>
+        <Label fx:id="welcomeLabel" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+    </top>
+
+    <!-- Center: ButtonBar centrato sopra il grafico e input -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20.0">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <!-- ButtonBar centrato -->
+            <HBox alignment="CENTER">
+                <ButtonBar>
+                    <buttons>
+                        <Button onAction="#switchToProfiloPaziente" text="Profilo" />
+                       	<Button fx:id="mailButton" onAction="#switchToMailPage" text="Mail" />
+                        <Button fx:id="questButton" onAction="#switchToQuestionarioPage" text="Questionario" />
+                        <Button onAction="#switchToLogin" text="Logout" />
+                    </buttons>
+                </ButtonBar>
+            </HBox>
+
+            <!-- Grafico glicemia -->
+            <LineChart fx:id="graficoGlicemia" prefHeight="200.0" prefWidth="500.0" title="Valori glicemia">
+                <xAxis>
+                    <CategoryAxis label="Misurazione" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT" />
+                </yAxis>
+            </LineChart>
+
+            <!-- Input glicemia -->
+            <HBox alignment="CENTER" spacing="10.0">
+                <TextField fx:id="valoreField" maxWidth="100" promptText="Valore glicemia" />
+                <ComboBox fx:id="indicazioniBox" maxWidth="130" promptText="Pre/Post pasto" />
+                <TextField fx:id="oraField" maxWidth="90" promptText="Ora" />
+                <TextField fx:id="minutiField" maxWidth="90" promptText="Minuti" />
+                <Button onAction="#handleGlicemia" text="Inserisci valore" />
+            </HBox>
+
+        </VBox>
+    </center>
+   <bottom>
+      <Label fx:id="statoQuestionarioOdierno" BorderPane.alignment="CENTER" />
+   </bottom>
+
+</BorderPane>

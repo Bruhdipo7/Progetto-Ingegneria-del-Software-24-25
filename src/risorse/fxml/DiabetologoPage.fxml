@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DiabetologoController">
+
+   <top>
+      <Label fx:id="welcomeLabel" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </top>
+
+   <center>
+      <VBox alignment="CENTER" prefHeight="321.0" prefWidth="427.0" spacing="20">
+         <!-- HBox per centrare il ButtonBar -->
+         <HBox alignment="CENTER">
+            <ButtonBar>
+               <buttons>
+                  <Button onAction="#switchToProfiloDiabetologo" text="Profilo" ButtonBar.buttonData="OTHER" />
+                  <Button fx:id="mailButton" onAction="#switchToMailPage" text="Mail" ButtonBar.buttonData="OTHER" />
+                  <Button onAction="#switchToLogin" text="Logout" ButtonBar.buttonData="OTHER" />
+               </buttons>
+            </ButtonBar>
+         </HBox>
+
+         <ListView fx:id="listaNomiPazienti" prefHeight="200.0" prefWidth="460.0" />
+      </VBox>
+   </center>
+   <right>
+      <AnchorPane prefHeight="321.0" prefWidth="224.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="69.0" layoutY="169.0" text="Glicemie sballate" />
+            <ListView fx:id="listaGlicemieSballate" layoutX="14.0" layoutY="186.0" prefHeight="113.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="43.0" text="Questionari non conformi" />
+            <ListView fx:id="listaQuestNonConformi" layoutX="14.0" layoutY="60.0" prefHeight="101.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </right>
+
+</BorderPane>

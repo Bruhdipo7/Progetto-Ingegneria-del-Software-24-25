@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MostraDettagliTerapiaController">
+   <top>
+      <Label text="Dettagli terapia" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <GridPane prefHeight="237.0" prefWidth="398.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="224.79998779296875" minWidth="10.0" prefWidth="115.19996337890625" />
+          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="495.99999999999994" minWidth="10.0" prefWidth="421.6000366210937" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="29.0" minHeight="3.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.0" minHeight="0.0" prefHeight="26.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="79.8000396728516" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="170.8" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="170.8" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nome farmaco: " />
+            <Label fx:id="nomeFarmacoLabel" GridPane.columnIndex="1" />
+            <Label text="Dosi giornaliere: " GridPane.rowIndex="1" />
+            <Label fx:id="dosiGiornaliereLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Data di fine: " GridPane.rowIndex="4" />
+            <Label fx:id="dataFineLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Indicazioni: " GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <Label fx:id="indicazioniLabel" textOverrun="CLIP" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <Label text="Data di inizio: " GridPane.rowIndex="3" />
+            <Label fx:id="dataInizioLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Modificato da: " GridPane.rowIndex="6" />
+            <Label fx:id="modificatoDaLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Quantità: " GridPane.rowIndex="2" />
+            <Label fx:id="quantitàLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#switchToMostraDatiPaziente" text="Indietro" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Button mnemonicParsing="false" onAction="#switchToModificaTerapia" text="Modifica" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

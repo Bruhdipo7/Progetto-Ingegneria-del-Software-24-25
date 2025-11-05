@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfiloPazienteController">
+
+    <!-- HEADER -->
+    <top>
+        <Label fx:id="labelProfilo" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+    </top>
+
+    <!-- FOTO + INFO PROFILO -->
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="fotoProfiloImage" fitHeight="200.0" fitWidth="150.0" layoutX="19.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+
+                <Label fx:id="nomeCognomeLabel" layoutX="238.0" layoutY="43.0" />
+                <Label fx:id="dateOfBirthLabel" layoutX="238.0" layoutY="66.0" />
+                <Label fx:id="sexLabel" layoutX="238.0" layoutY="90.0" />
+            </children>
+        </AnchorPane>
+    </center>
+
+    <!-- TERAPIA CORRENTE -->
+    <right>
+        <AnchorPane prefHeight="332.0" prefWidth="269.0" BorderPane.alignment="CENTER">
+            <children>
+                <TitledPane fx:id="terapiaCorrente" animated="false" collapsible="false" expanded="true" layoutX="12.0" layoutY="11.0" prefHeight="310.0" prefWidth="246.0" text="Terapia corrente">
+                    <content>
+                        <AnchorPane prefHeight="284.0" prefWidth="222.0">
+                            <children>
+                                <GridPane layoutY="1.0" prefHeight="215.0" prefWidth="200.0">
+
+                                    <!-- COLONNE -->
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+
+                                    <!-- RIGHE -->
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="72.80000000000001" minHeight="1.1999877929687557" prefHeight="31.59998168945313" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="71.60001220703126" minHeight="0.0" prefHeight="41.20001831054688" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+
+                                    <!-- LABEL TERAPIA -->
+                                    <children>
+                                        <Label text="Nome farmaco:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                        <Label fx:id="nomeFarmacoLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                        <Label text="Dosi giornaliere:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                        <Label fx:id="dosiGiornaliereLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+										<Label text="Quantità:" GridPane.rowIndex="2" />
+                             	 		<Label fx:id="quantitàLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                        <Label text="Data di inizio:" GridPane.rowIndex="3" />
+                                        <Label fx:id="dataInizioLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                        <Label text="Data di fine:" GridPane.rowIndex="4" />
+                                        <Label fx:id="dataFineLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        
+                              			<Label text="Indicazioni:" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                                        <Label fx:id="indicazioniLabel" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </children>
+        </AnchorPane>
+    </right>
+
+    <!-- FOOTER -->
+    <bottom>
+        <Button mnemonicParsing="false" onAction="#switchToPazientePage" text="Indietro" BorderPane.alignment="CENTER" />
+    </bottom>
+
+</BorderPane>

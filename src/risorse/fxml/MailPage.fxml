@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="768" prefWidth="1366" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MailController">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox prefHeight="768" prefWidth="200" spacing="10" styleClass="sidebar">
+            <Button onAction="#showCompose" styleClass="compose-btn" text="✉ Compose" />
+         <Label fx:id="mailNonLette" />
+            <Separator />
+            <Button onAction="#showMailRicevute" styleClass="menu-btn" text="📥 Inbox" />
+            <Button onAction="#showMailInviate" styleClass="menu-btn" text="📤 Sent" />
+            <Button fx:id="bottoneIndietro" styleClass="menu-btn" text="⬅ Indietro" />
+        </VBox>
+    </left>
+
+    <!-- Lista Email -->
+    <center>
+        <VBox prefHeight="768" prefWidth="800" spacing="10" styleClass="mail-list">
+            <TextField fx:id="searchMailBar" promptText="Search..." styleClass="search-bar" />
+            
+            <ListView fx:id="listaMail" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </center>
+
+    <!-- Pannello Composizione -->
+    <right>
+        <VBox fx:id="scriviPanel" managed="false" prefHeight="768" prefWidth="366" spacing="10" styleClass="compose-panel" visible="false">
+            <Label styleClass="compose-title" text="Compose" />
+            <TextField fx:id="destinatarioField" promptText="To" />
+            <TextField fx:id="oggettoField" promptText="Subject" />
+            <TextArea fx:id="corpoArea" promptText="Compose email..." VBox.vgrow="ALWAYS" />
+            <HBox spacing="10">
+                <Button onAction="#handleMail" styleClass="send-btn" text="Send" />
+                <Button onAction="#hideCompose" text="Cancel" />
+            </HBox>
+        </VBox>
+    </right>
+
+</BorderPane>

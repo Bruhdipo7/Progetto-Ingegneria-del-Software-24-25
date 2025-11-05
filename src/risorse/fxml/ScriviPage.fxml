@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ScriviMailController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+         	<Button layoutX="273.0" layoutY="318.0" mnemonicParsing="false" onAction="#handleMail" text="Invia" />
+            <TextField fx:id="destinatarioField" layoutX="220.0" layoutY="32.0" promptText="Destinatario" />
+            <TextField fx:id="oggettoField" layoutX="220.0" layoutY="67.0" promptText="Oggetto" />
+            <TextArea fx:id="corpoArea" layoutX="200.0" layoutY="104.0" prefHeight="200.0" prefWidth="200.0" promptText="Scrivi ..." />
+            <Button layoutX="456.0" layoutY="171.0" mnemonicParsing="false" onAction="#switchToMailPage" text="Indietro" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
